@@ -56,7 +56,7 @@ const TimelineIntro = () => {
         <div className='w-full h-full absolute'  style={{  zIndex:10,
          background: `linear-gradient(to right, #0e0e0e 0% ,#0e0e0e 35%, transparent 45%, transparent 55%, #0e0e0e 65%, #0e0e0e 100%)`}}/>
          <div style={{zIndex:20}}>
-            <h2 className='take-back font-heading text-6xl font-bold text-sand opacity-1 transform mb-80 translate-y-20  '>Let's take it back.</h2>
+            <h2 className='take-back font-heading text-4xl md:text-6xl font-bold text-sand opacity-1 transform mb-30 md:mb-40 lg:mb-60 xl:mb-70  2xl:mb-80 translate-y-10  '>Let's take it back.</h2>
          </div>
        
         <svg

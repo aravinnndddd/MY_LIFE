@@ -175,13 +175,13 @@ text {
 
 
 .timeline-intro-wrapper{
-  @apply h-dvh w-dvw justify-center items-end flex overflow-hidden relative 
+  @apply  w-dvw justify-center items-end flex overflow-hidden relative 
 }
 
 
 
 .timeline-text{
-  @apply font-heading text-sand invisible text-[7px] md:text-[10px] lg:text-xs w-[100px] md:w-[250px] lg:w-[280px]
+  @apply font-heading text-sand invisible text-[7px] md:text-[10px] lg:text-xs w-[100px] md:w-[200px] lg:w-[280px]
 }
 
 .timeline-pic{
@@ -194,7 +194,7 @@ text {
 
 
 .testimonials{
-  @apply w-dvw  flex flex-col items-center justify-center gap-0 pb-[300px]
+  @apply w-dvw   flex flex-col items-center justify-center gap-0 pb-[300px]
   
 }
 
@@ -210,11 +210,11 @@ text {
 }
 
 .testimonial-content-wrapper{
-  @apply flex flex-col gap-30
+  @apply flex flex-col gap-30 w-full px-10 lg:px-20
 }
 
 .single-testimonial-wrapper{
-  @apply flex flex-col w-[1000px] justify-start items-start gap-10
+  @apply flex flex-col w-[78%] justify-start items-start gap-10
 }
 
 .tech-logo{

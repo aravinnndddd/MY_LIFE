@@ -36,8 +36,8 @@ export default function Home() {
       <BingeableShowcase />
       <TimelineIntro  />
       <TimelineSection />
-      {/* <TestimonialsIntro /> */}
-      {/* <Testimonials /> */}
+      <TestimonialsIntro />
+      <Testimonials />
       {/* <TechStack /> */}
 
     </div>

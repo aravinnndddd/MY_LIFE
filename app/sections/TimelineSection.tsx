@@ -75,7 +75,7 @@ const TimelineSection = () => {
 
     
   return (
-    <div className='timeline  w-dvw relative pb-40  '>
+    <div className='timeline  w-dvw relative pb-40 h-full  '>
 
             <Image
                 id='uoft'
@@ -83,7 +83,7 @@ const TimelineSection = () => {
                 width={150}
                 height={150}
                 alt='university-of-toronto'
-                className='timeline-pic w-[70px] lg:w-[100px] 2xl:w-[150px] absolute top-[30%] left-[75%] md:top-[31%] md:left-[85%] lg:left-[73%] xl:top-[30%] xl:left-[70%] 2xl:top-[15%]  2xl:left-[65%] opacity-0 rotate-6'
+                className='timeline-pic w-[50px] lg:w-[100px] 2xl:w-[150px] absolute top-[30%] left-[79%] md:top-[31%] md:left-[85%] lg:left-[73%] xl:top-[30%] xl:left-[70%] 2xl:top-[15%]  2xl:left-[65%] opacity-0 rotate-6'
             />
             <Image
                 id='chair'
@@ -91,7 +91,7 @@ const TimelineSection = () => {
                 width={120}
                 height={120}
                 alt='barber-chair'
-                className='timeline-pic  w-[55px] lg:w-[100px] 2xl:w-[120px] absolute top-[47%] left-[68%] md:top-[45%] md:left-[80%] lg:left-[70%] xl:top-[45%] xl:left-[60%] 2xl:left-[63%] 2xl:top-[43%] opacity-0 -rotate-3'
+                className='timeline-pic  w-[45px] lg:w-[100px] 2xl:w-[120px] absolute top-[46.5%] left-[68%] md:top-[45%] md:left-[80%] lg:top-[44%] lg:left-[76%] xl:top-[45%] xl:left-[68%] 2xl:left-[63%] 2xl:top-[43%] opacity-0 -rotate-3'
             />
             <Image
                 id='haircut'
@@ -99,7 +99,7 @@ const TimelineSection = () => {
                 width={120}
                 height={120}
                 alt='haircut-1'
-                className='timeline-pic w-[50px] lg:w-[90px] 2xl:w-[120px] absolute top-[50%] left-[80%] md:top-[47.5%] md:left-[85%] lg:left-[70%] 2xl:left-[75%]  opacity-0 rotate-3'
+                className='timeline-pic w-[40px] lg:w-[90px] 2xl:w-[120px] absolute top-[47%] left-[80%] md:top-[47.5%] md:left-[85%] lg:top-[49%] lg:left-[85%] xl:left-[78%] 2xl:left-[75%]  opacity-0 rotate-3'
             />
             
             <Image
@@ -108,7 +108,7 @@ const TimelineSection = () => {
                 width={120}
                 height={120}
                 alt='haircut-2'
-                className='timeline-pic  absolute top-[1520px] left-[800px] opacity-0'
+                className='timeline-pic hidden 2xl:flex absolute top-[1520px] left-[800px] opacity-0'
             />
             <Image
                 id='combover'
@@ -116,7 +116,7 @@ const TimelineSection = () => {
                 width={120}
                 height={120}
                 alt='haircut-3'
-                className='timeline-pic  absolute top-[1530px] left-[1000px] opacity-0 -rotate-5'
+                className='timeline-pic hidden 2xl:flex  absolute top-[1530px] left-[1000px] opacity-0 -rotate-5'
             />
             <Image
                 id='competition'
@@ -124,7 +124,7 @@ const TimelineSection = () => {
                 width={120}
                 height={120}
                 alt='competition'
-                className='timeline-pic  absolute top-[1500px] left-[1200px] opacity-0 rotate-5'
+                className='timeline-pic  hidden 2xl:flex absolute top-[1500px] left-[1200px] opacity-0 rotate-5'
             />
             <Image
                 id='camera-op'
@@ -132,7 +132,7 @@ const TimelineSection = () => {
                 width={120}
                 height={120}
                 alt='camera-operating'
-                className='timeline-pic  absolute top-[2000px] left-[600px] opacity-0 -rotate-5'
+                className='timeline-pic w-[45px] md:w-[70px] lg:w-[90px]  absolute top-[65%] left-[15%] 2xl:top-[72%] 2xl:left-[62%] opacity-0 -rotate-5'
             />
             <Image
                 id='still-1'
@@ -140,7 +140,7 @@ const TimelineSection = () => {
                 width={180}
                 height={180}
                 alt='film-still-1'
-                className='timeline-pic  absolute top-[2150px] left-[800px] opacity-0 rotate-6'
+                className='timeline-pic  w-[80px] md:w-[120px] lg:w-[150px] xl:w-[180px]  absolute top-[70%] left-[29%] md:top-[70%] 2xl:top-[80%] 2xl:left-[35%] opacity-0 rotate-6'
             />
             <Image
                 id='still-2'
@@ -148,7 +148,7 @@ const TimelineSection = () => {
                 width={180}
                 height={180}
                 alt='film-still-2'
-                className='timeline-pic  absolute top-[2000px] left-[920px] opacity-0 rotate-6'
+                className='timeline-pic hidden md:block md:w-[120px] lg:w-[140px] xl:w-[180px]  absolute top-[70%] left-[45%] md:top-[70%] md:left-[40%] 2xl:top-[79%] 2xl:left-[50%] opacity-0 rotate-6'
             />
             <Image
                 id='still-3'
@@ -156,7 +156,7 @@ const TimelineSection = () => {
                 width={250}
                 height={250}
                 alt='film-still-3'
-                className='timeline-pic  absolute top-[2100px] left-[1300px] opacity-0 -rotate-3'
+                className='timeline-pic w-[90px] md:w-[140px] lg:w-[200px] xl:w-[250px] absolute top-[69%] left-[60%] md:top-[68%] md:left-[65%] 2xl:top-[78%] 2xl:left-[70%] opacity-0 -rotate-3'
             />
 
        
@@ -197,16 +197,16 @@ const TimelineSection = () => {
         <div id='text-2016' className='timeline-text absolute top-[45%] left-[50%] md:top-[45%] md:left-[46%] lg:left-[35%] lg:top-[45%] xl:top-[45%] xl:left-[32%] 2xl:top-[44%] 2xl:left-[40%]'>
             <p>Entered the world of creative barbering</p>
         </div>
-        <div id='text-barbering-great' className='timeline-text absolute top-[1392] left-[800px]'>
+        <div id='text-barbering-great' className='timeline-text absolute top-[50%] left-[43%] md:top-[49%]  md:left-[40%] lg:left-[35%] lg:top-[48%] xl:top-[49%] xl:left-[28%] 2xl:top-[50%] 2xl:left-[40%]'>
             <p>It was great at first. I participated in competitions, built a steady clientele, became self-employed with my best month of doing $9.4k in sales</p>
         </div>
-        <div id='text-2023' className='timeline-text absolute top-[1792px] left-[800px]'>
+        <div id='text-2023' className='timeline-text absolute top-[56%] left-[57%] md:top-[56%]  md:left-[48%] lg:left-[35%] lg:top-[53%] xl:top-[56%] xl:left-[32%] 2xl:top-[67%] 2xl:left-[40%]'>
             <p>...but over time I lost the passion, felt limited in my growth, and simply felt like I can achieve more elsewhere.</p>
         </div>
-        <div id='text-2024' className='timeline-text absolute top-[1880px] left-[800px]'>
+        <div id='text-2024' className='timeline-text absolute top-[62%] left-[57%] md:top-[62%] md:left-[46%] 2xl:top-[73%] 2xl:left-[35%] '>
             <p>I explored a few different paths, while keeping my barbering job. Most notably I pursued cinematography where I earned a 'Best Cinematography Award' nomination at a local film festival. </p>
         </div>
-        <div id='text-2025' className='timeline-text absolute top-[2400px] left-[800px]'>
+        <div id='text-2025' className='timeline-text absolute  top-[78%] left-[57%] xl:top-[80%] 2xl:top-[91%] 2xl:left-[35%]'>
             <p>Ultimately, I learned two things about myself after this exploration phase. I love technology and creative problem solving. So I dove head first in software development and after learning on my own, I built and launched my mobile app Bingeable, which has a real growing user base.</p>
             <p>I am now looking to apply my skills and learnings at a place where I can contribute and grow further...</p>
         </div>

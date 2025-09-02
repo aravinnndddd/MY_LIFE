@@ -23,6 +23,6 @@ export const testimonialData = [
         company: 'Betr',
         picURL : '/ryan-photo.jpeg',
         linkedIn : 'https://www.linkedin.com/in/ryancimoszko/',
-        text : "I've been consistently impressed by Andrew's drive and initiative. He independently took an idea from concept to a fully launched app in the App Store (Bingeable), handling everything from design to backend and frontend development. He's a quick learner, resourceful, and highly motivated, always applying feedback effectively and showing persistence in solving problems."
+        text : "I've been consistently impressed by Andrew's drive and initiative. He independently took an idea from concept to a fully launched app in the App Store (Bingeable), handling everything from design to backend and frontend development.\n\n He's a quick learner, resourceful, and highly motivated, always applying feedback effectively and showing persistence in solving problems."
     }
 ]

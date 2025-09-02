@@ -66,17 +66,17 @@ const Testimonials = () => {
     <div className='testimonials'>
         <div className='testimonial-content-wrapper'>
             { testimonialData.map( (data, index) => (
-                <div key={index} className='single-testimonial-wrapper'>
-                    <h3  id={`text-${index+1}`} className='testimonial-text font-heading text-6xl font-extrabold text-sand tracking-tight'><span className='text-customBlue font-heading text-9xl font-bold tracking-tighter '>" </span>{data.text}</h3>
+                <div key={index} className='single-testimonial-wrapper whitespace-pre-line'>
+                    <h3  id={`text-${index+1}`} className='testimonial-text  font-heading text-2xl md:text-6xl font-extrabold text-sand tracking-tight'><span className='text-customBlue font-heading text-9xl font-bold tracking-tighter '>" </span>{data.text}</h3>
                     <div className='flex flex-row gap-3 justify-center items-center cursor-pointer' onClick={()=>handleClick(data.linkedIn)}>
                         <Image
                             src={data?.picURL || '/avatarFallbackCustom3.jpg'}
                             height={75}
                             width={75}
-                            className={`overflow-hidden object-contain rounded-full ${!data?.picURL && `bg-gray-300`}`}
+                            className={`w-[50px] md:w-[75px] overflow-hidden object-contain rounded-full ${!data?.picURL && `bg-gray-300`}`}
                             alt='profile-pic'
                         />
-                        <div className='flex flex-col '>
+                        <div className='flex flex-col text-sm md:text-lg '>
                             <p className='font-heading font-bold text-sand mb-2'>{data.name}</p>
                             <p className='font-heading font-medium text-[#897b72] leading-2'>{data.title}</p>
                             <p className='font-heading font-medium text-[#897b72]'> {data?.company}</p>
