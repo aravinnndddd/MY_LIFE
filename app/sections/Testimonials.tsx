@@ -30,7 +30,6 @@ const Testimonials = () => {
               end : '30% 80%%',
               trigger: '.testimonials',
               scrub: true,
-              markers:true
   
             }
         })
@@ -43,7 +42,6 @@ const Testimonials = () => {
               end : 'bottom 40%%',
               trigger: '#text-2',
               scrub: true,
-              markers:true
   
             }
         })
@@ -56,8 +54,6 @@ const Testimonials = () => {
               end : 'bottom 40%%',
               trigger: '#text-3',
               scrub: true,
-              markers:true
-  
             }
         })
     })

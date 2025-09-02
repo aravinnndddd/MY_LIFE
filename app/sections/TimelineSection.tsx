@@ -1,9 +1,27 @@
 import { useGSAP } from '@gsap/react';
-import React from 'react'
+import React, {useState, useEffect} from 'react'
 import gsap from 'gsap';
 import Image from 'next/image';
 
 const TimelineSection = () => {
+
+    const [isDesktop, setIsDesktop] = useState(false)
+
+  useEffect(() => {
+    const mediaQuery = window.matchMedia("(min-width: 1536px)");
+
+    // Set initial value
+    setIsDesktop(mediaQuery.matches);
+
+    // Update on change
+    const handler = (e: MediaQueryListEvent) => setIsDesktop(e.matches);
+    mediaQuery.addEventListener("change", handler);
+
+    // Cleanup
+    return () => {
+      mediaQuery.removeEventListener("change", handler);
+    };
+  }, []);
 
     useGSAP(()=>{
 
@@ -36,7 +54,6 @@ const TimelineSection = () => {
             scrub: true,
             start: "top 10% ",
             end: "bottom top",
-            markers:true
           }
         })
         .to(".ball01", { duration: 0.01, autoAlpha: 1 })
@@ -54,11 +71,11 @@ const TimelineSection = () => {
         )
         .add(pulses, 0);
 
-    })
+    }, [])
 
     
   return (
-    <div className='timeline  w-dvw relative pb-40'>
+    <div className='timeline  w-dvw relative pb-40  '>
 
             <Image
                 id='uoft'
@@ -66,7 +83,7 @@ const TimelineSection = () => {
                 width={150}
                 height={150}
                 alt='university-of-toronto'
-                className='timeline-pic  absolute top-[390px] left-[1200px] opacity-0 rotate-6'
+                className='timeline-pic w-[70px] lg:w-[100px] 2xl:w-[150px] absolute top-[30%] left-[75%] md:top-[31%] md:left-[85%] lg:left-[73%] xl:top-[30%] xl:left-[70%] 2xl:top-[15%]  2xl:left-[65%] opacity-0 rotate-6'
             />
             <Image
                 id='chair'
@@ -74,7 +91,7 @@ const TimelineSection = () => {
                 width={120}
                 height={120}
                 alt='barber-chair'
-                className='timeline-pic  absolute top-[1186px] left-[1100px] opacity-0 -rotate-3'
+                className='timeline-pic  w-[55px] lg:w-[100px] 2xl:w-[120px] absolute top-[47%] left-[68%] md:top-[45%] md:left-[80%] lg:left-[70%] xl:top-[45%] xl:left-[60%] 2xl:left-[63%] 2xl:top-[43%] opacity-0 -rotate-3'
             />
             <Image
                 id='haircut'
@@ -82,7 +99,7 @@ const TimelineSection = () => {
                 width={120}
                 height={120}
                 alt='haircut-1'
-                className='timeline-pic  absolute top-[1100px] left-[1300px] opacity-0 rotate-3'
+                className='timeline-pic w-[50px] lg:w-[90px] 2xl:w-[120px] absolute top-[50%] left-[80%] md:top-[47.5%] md:left-[85%] lg:left-[70%] 2xl:left-[75%]  opacity-0 rotate-3'
             />
             
             <Image
@@ -143,7 +160,7 @@ const TimelineSection = () => {
             />
 
        
-        <svg id="svg-stage" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 2526.3">
+        <svg id="svg-stage" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 2526.3" className='scale-50 2xl:scale-100 origin-left'>
             <path className='theLine' d="M-5,0c303.3,153.3,405,303.3,305,450s-156.7,246.7-170,300c-20,66.7,36.7,150,170,250,133.3,100,117.4,455-115.9,488.4-88.3,15.5,121,58.8,158.6,80.1s-116.1,19.6-143.8,52.3,90.2,8.2,114.6,32.7-104.8,31.1-77,63.8c27.8,32.7,196.2-1.6,241.9,93.2s-336.7,14-294.2,94.8c45.8,87,287.7,148.8,243.6,299.1S-12.1,2506.7-12.1,2506.7" fill="none" stroke="#000" strokeWidth="10" />
             <circle className="ball ball01" cx="50" cy="100" r="20" />
             <circle className="ball ball02" cx="278" cy="201" r="20" />
@@ -165,19 +182,19 @@ const TimelineSection = () => {
             <text className="text08" x="50" y="2186.81">2025</text>
         </svg>
 
-        <div id='text-2011' className='timeline-text  absolute top-[200px] left-[800px]  ' > 
+        <div id='text-2011' className='timeline-text  absolute top-[26%] left-[42%] md:top-[27%] md:left-[40%] lg:left-[40%] xl:top-[27%] xl:left-[30%] 2xl:top-[7%] 2xl:left-[35%] ' > 
             <p>Graduated from Burnaby North Secondary with the Honour Cord</p>
         </div>
-        <div id='text-2011-2' className='timeline-text absolute top-[390px] left-[800px]'>
+        <div id='text-2011-2' className='timeline-text absolute top-[30%] left-[45%] md:top-[31%] md:left-[42%] lg:left-[33%] xl:top-[31%] xl:left-[30%] 2xl:top-[15%] 2xl:left-[37%]'>
             <p>Went to the University of Toronto for Engineering</p>
         </div>
-        <div id='text-2014' className='timeline-text absolute top-[770px] left-[800px]'>
+        <div id='text-2014' className='timeline-text absolute top-[36%] left-[33%] md:top-[38%] md:left-[30%] lg:left-[23%] xl:top-[38%] xl:left-[25%] 2xl:top-[29%] 2xl:left-[22%]'>
             <p>Completed 2 years, but withdrew from the program upon realizing it wasn't for me.</p>
         </div>
-        <div id='text-2015' className='timeline-text absolute top-[990px] left-[800px]'>
+        <div id='text-2015' className='timeline-text absolute top-[41%] left-[47%] md:top-[42%] md:left-[42%] lg:left-[33%] lg:top-[42%] xl:top-[42%] xl:left-[28%] 2xl:top-[36%] 2xl:left-[31%]'>
             <p>Enrolled and completed the Associates Certificate for Graphic Design at BCIT</p>
         </div>
-        <div id='text-2016' className='timeline-text absolute top-[1186px] left-[800px]'>
+        <div id='text-2016' className='timeline-text absolute top-[45%] left-[50%] md:top-[45%] md:left-[46%] lg:left-[35%] lg:top-[45%] xl:top-[45%] xl:left-[32%] 2xl:top-[44%] 2xl:left-[40%]'>
             <p>Entered the world of creative barbering</p>
         </div>
         <div id='text-barbering-great' className='timeline-text absolute top-[1392] left-[800px]'>

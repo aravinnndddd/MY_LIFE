@@ -233,9 +233,9 @@ mm.add("(min-width: 1024px)", () => {
 
   })
   return (
-    <div className="main-container h-dvh overflow-visible relative ">
+    <div className="main-container h-dvh overflow-hidden relative w-full  ">
       <section className="hero-section h-full relative w-full ">
-        <div className="w-dvw h-dvh absolute  aspect-[16/9] -z-10">
+        <div className="w-full h-dvh absolute  aspect-[16/9] -z-10">
           <Image
             src='/hero-image.png'
             alt="hero-image"
@@ -244,7 +244,7 @@ mm.add("(min-width: 1024px)", () => {
             className="object-cover -z-10 absolute "
           />
         </div>
-        <div className="hero-content  w-full h-full justify-center items-center flex flex-col translate-y-30 gap-3 pt-30  relative " >
+        <div className="hero-content  w-full h-full justify-center items-center flex flex-col translate-y-30 gap-3 pt-30  relative  " >
       
           <p style={{ }} className="hero-caption text-6xl lg:text-8xl -mt-56 w-[300px] lg:w-[550px] self-center  font-heading tracking-tighter  font-extrabold text-sand  ">I turn <span className="text-[#2e54d1] gibberish opacity-1">computer gibberish</span> into things that make businesses</p>
 

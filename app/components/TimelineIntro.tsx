@@ -1,10 +1,29 @@
 import { useGSAP } from '@gsap/react'
 import gsap from 'gsap'
-import React, {useRef} from 'react'
+import React, {useRef, useState, useEffect} from 'react'
 
 const TimelineIntro = () => {
 
     const svgRef = React.useRef(null)
+
+
+  const [isDesktop, setIsDesktop] = useState(false)
+
+  useEffect(() => {
+    const mediaQuery = window.matchMedia("(min-width: 1536px)");
+
+    // Set initial value
+    setIsDesktop(mediaQuery.matches);
+
+    // Update on change
+    const handler = (e: MediaQueryListEvent) => setIsDesktop(e.matches);
+    mediaQuery.addEventListener("change", handler);
+
+    // Cleanup
+    return () => {
+      mediaQuery.removeEventListener("change", handler);
+    };
+  }, []);
 
 
     useGSAP(() => {
@@ -17,7 +36,8 @@ const TimelineIntro = () => {
         })
       
         tl.to(svgRef.current, {
-          x: 900,
+          x: isDesktop ? '50vw' : '140vw',
+          // xPercent: isDesktop ? 0 : 210,  
           ease: 'back.inOut',
           duration: 4
         })
@@ -29,7 +49,7 @@ const TimelineIntro = () => {
         }, '-=1')
 
 
-      }, [])
+      }, [isDesktop])
   return (
     <div className='timeline-intro-wrapper  ' style={{
       }}>
@@ -42,10 +62,10 @@ const TimelineIntro = () => {
         <svg
             id="Layer_1"
             ref={svgRef}
-            className='timeline-svg'
+            className='timeline-svg scale-300 2xl:scale-110 absolute -translate-x-[70vw] 2xl:-translate-x-[20vw]'
             xmlns="http://www.w3.org/2000/svg"
             viewBox="0 0 5092.47 1080"
-            style={{ transform: 'scale(1.1) translateX(-450px)', transformOrigin: 'center', zIndex:1, position:'absolute'  }}
+            // style={{ transform: 'translateX(-450px)', transformOrigin: 'center', zIndex:1, position:'absolute'  }}
 
         >
            
