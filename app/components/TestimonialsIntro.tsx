@@ -1,7 +1,6 @@
 import React from 'react'
 import { useGSAP } from '@gsap/react'
 import gsap from 'gsap'
-import { testimonialData } from '../lib/testimonialData'
 
 const TestimonialsIntro = () => {
 

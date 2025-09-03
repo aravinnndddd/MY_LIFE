@@ -1,27 +1,27 @@
 import { useGSAP } from '@gsap/react';
-import React, {useState, useEffect} from 'react'
+import React from 'react'
 import gsap from 'gsap';
 import Image from 'next/image';
 
 const TimelineSection = () => {
 
-    const [isDesktop, setIsDesktop] = useState(false)
+//     const [isDesktop, setIsDesktop] = useState(false)
 
-  useEffect(() => {
-    const mediaQuery = window.matchMedia("(min-width: 1536px)");
+//   useEffect(() => {
+//     const mediaQuery = window.matchMedia("(min-width: 1536px)");
 
-    // Set initial value
-    setIsDesktop(mediaQuery.matches);
+//     // Set initial value
+//     setIsDesktop(mediaQuery.matches);
 
-    // Update on change
-    const handler = (e: MediaQueryListEvent) => setIsDesktop(e.matches);
-    mediaQuery.addEventListener("change", handler);
+//     // Update on change
+//     const handler = (e: MediaQueryListEvent) => setIsDesktop(e.matches);
+//     mediaQuery.addEventListener("change", handler);
 
-    // Cleanup
-    return () => {
-      mediaQuery.removeEventListener("change", handler);
-    };
-  }, []);
+//     // Cleanup
+//     return () => {
+//       mediaQuery.removeEventListener("change", handler);
+//     };
+//   }, []);
 
     useGSAP(()=>{
 

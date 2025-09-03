@@ -1,6 +1,3 @@
-
-
-
 import React, { useEffect, useRef, useState } from 'react';
 import Matter from 'matter-js';
 import { gsap } from 'gsap';
@@ -66,7 +63,6 @@ const TechStack = () => {
       if (hasStarted.current) return;
       hasStarted.current = true;
 
-      console.log('FROM START PHYISCS')
 
       const container = containerRef.current;
       if (!container) return;
@@ -114,6 +110,7 @@ const TechStack = () => {
           font-weight: bold;
           user-select: none;
           pointer-events: none;
+          z-index:50;
         `;
         container.appendChild(el);
 
@@ -140,7 +137,6 @@ const TechStack = () => {
 
 
       const render = () => {
-        console.log("HELLO FROM RENDER")
         
         Matter.Engine.update(engine);
         bodies.forEach(({ body, el }) => {
@@ -154,6 +150,7 @@ const TechStack = () => {
         horizontalSpread.current = Math.abs(firstBody.position.x - lastBody.position.x);
       
         if (horizontalSpread.current > 200 && !footerStarted.current) {
+
           footerStarted.current = true;
 
           const footerTL = gsap.timeline({
@@ -166,12 +163,6 @@ const TechStack = () => {
             duration: 3,
             ease: 'power3.out',
           })
-          // .to('.footer-text-2', {
-          //   opacity: 1,
-          //   y: 0,
-          //   duration: 3,
-          //   ease: 'power3.out',
-          // }, '-=0.5')
           .to('.footer-text-3', {
             opacity: 1,
             y: 0,
@@ -350,7 +341,7 @@ const TechStack = () => {
 
       await handleFormSubmit()
     
-      // setShouldFireConfetti(false)
+      setShouldFireConfetti(false)
     }
   }
 
@@ -437,13 +428,12 @@ const TechStack = () => {
       >
 
       </div>
-      <div className='footer-content'>
+      <div className='footer-content' >
         <div style={{ display: isMobile && !hideForm ? 'none' : 'block' }} className='footer-text '>
             <h2 className='footer-text-1 text-white  font-heading text-2xl md:text-5xl font-semibold text-center   opacity-0' >Looks like you overflowed my tech stack...</h2>
-            {/* <h2 className='footer-text-2 text-white  font-heading text-2xl md:text-5xl font-semibold text-center   pt-8 opacity-0' >Get it?</h2> */}
             <h2 className=' footer-text-3 text-white  font-heading text-2xl md:text-5xl font-semibold text-center   pt-8 opacity-0' >Okay that was lame, but feel free to say hi.</h2>
         </div>
-        <div style={{ flexDirection: isMobile ? 'column' : 'row' }} className='footer-cta '>
+        <div style={{ flexDirection: isMobile ? 'column' : 'row' }} className='footer-cta  '>
           <div className='cta-left'>
             <div className='headshot w-[120px] h-[120px] overflow-hidden rounded-full'>
               <Image
@@ -510,8 +500,6 @@ const TechStack = () => {
               </form>
             </div>
           ) }
-          {/* <div className=' confetti '> */}
-          {/* </div> */}
         </div>
       </div>
     </div>

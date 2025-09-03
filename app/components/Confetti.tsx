@@ -5,7 +5,7 @@ import { Physics2DPlugin } from 'gsap/Physics2DPlugin';
 
 gsap.registerPlugin(Physics2DPlugin);
 
-const ConfettiBurst = ( { shouldFire }) => {
+const ConfettiBurst = ( { shouldFire } : {shouldFire:boolean}) => {
   const canvasRef = useRef<HTMLCanvasElement>(null);
   const ctxRef = useRef<CanvasRenderingContext2D | null>(null);
   const particles = useRef<any[]>([]);

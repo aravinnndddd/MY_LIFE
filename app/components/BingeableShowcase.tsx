@@ -22,11 +22,10 @@ const BingeableShowcase = () => {
   const imageRefs = useRef<(HTMLImageElement | null)[]>([]);
   const backendImageRefs = useRef<(HTMLImageElement | null)[]>([]);
 
-  const [val, setVal] = useState(0)
   const [ frontEndHoverIndex, setFrontEndHoverIndex ] = useState(0)
   const [ backEndHoverIndex, setBackEndHoverIndex ] = useState(0)
-  const [ frontEndImage, setFrontEndImage ] = useState(frontEndPoints[0]?.image)
-  const [ backendImage, setBackendImage ] = useState(backendData[0]?.image)
+  // const [ frontEndImage, setFrontEndImage ] = useState(frontEndPoints[0]?.image)
+  // const [ backendImage, setBackendImage ] = useState(backendData[0]?.image)
 
   const frontEndImages = frontEndPoints.map( data => (data.image) )
   const backendImages = backendData.map( data => (data.image) )

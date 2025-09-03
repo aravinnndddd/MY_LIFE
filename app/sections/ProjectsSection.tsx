@@ -1,8 +1,6 @@
 import { useGSAP } from '@gsap/react'
-import { SplitText } from 'gsap/all'
 import React from 'react'
 import gsap from 'gsap'
-import BingeableShowcase from '../components/BingeableShowcase'
 
 
 
@@ -11,9 +9,7 @@ const ProjectsSection = () => {
   
 
     useGSAP(() => {
-        const textSplit1 = SplitText.create('.projects-text1', {
-            type : 'chars'
-        })
+     
 
         const tl = gsap.timeline()
 

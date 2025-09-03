@@ -222,7 +222,7 @@ text {
 }
 
 .tech-plate{
-  @apply text-sm md:text-lg font-heading font-medium
+  @apply text-sm md:text-lg font-heading font-medium 
 }
 
 .footer-wrapper{
@@ -234,7 +234,7 @@ text {
 }
 
 .footer-content{
-  @apply flex flex-col gap-10 w-dvw h-dvh overflow-hidden absolute top-80 left-1/2 transform -translate-x-1/2 -translate-y-1/2  justify-center items-center z-30
+  @apply flex flex-col gap-10 w-dvw h-dvh overflow-hidden absolute top-80 left-1/2  -translate-x-1/2 -translate-y-1/2  justify-center items-center pointer-events-none
 }
 
 .confetti{
@@ -246,7 +246,7 @@ text {
 }
 
 .footer-cta{
-  @apply pt-10 gap-10 flex flex-col w-dvw  px-20 lg:flex-row justify-center items-center translate-y-10 opacity-0 relative
+  @apply pt-10 gap-10 flex flex-col w-dvw  px-20 lg:flex-row justify-center items-center translate-y-10 opacity-0 relative  pointer-events-auto
 }
 
 .buttons{

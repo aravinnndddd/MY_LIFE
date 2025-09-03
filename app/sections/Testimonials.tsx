@@ -4,7 +4,6 @@ import Image from 'next/image'
 import { useGSAP } from '@gsap/react'
 import gsap from 'gsap'
 import { SplitText } from 'gsap/all'
-import { avatarFallback } from '../lib/fallbackImage'
 
 const Testimonials = () => {
 
@@ -58,7 +57,7 @@ const Testimonials = () => {
         })
     })
 
-    const handleClick = (url) => {
+    const handleClick = (url: string) => {
         window.open(url, '_blank')
     }
 

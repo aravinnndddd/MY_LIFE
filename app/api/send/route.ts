@@ -5,9 +5,7 @@ import { Resend } from "resend";
 
 
 export async function POST(req: Request) {
-    console.log('trying to send email...')
     const resend  = new Resend(process.env.RESEND_API)
-    console.log('api is', process.env.RESEND_API)
     const { from, subject, message } = await req.json()
     try {
         const { data } = await resend.emails.send({
