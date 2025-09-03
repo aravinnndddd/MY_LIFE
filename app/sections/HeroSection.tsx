@@ -166,7 +166,7 @@ export default function HeroSection() {
 
   })
   return (
-    <div className="main-container h-dvh overflow-hidden relative w-full  ">
+    <div className="main-container h-dvh overflow-hidden relative w-dvw   ">
       <section className="hero-section h-full relative w-full ">
         <div className="w-full h-dvh absolute  aspect-[16/9] -z-10">
           <Image
@@ -174,7 +174,7 @@ export default function HeroSection() {
             alt="hero-image"
             fill
             priority={true}
-            className="object-cover -z-10 absolute "
+            className="object-cover -z-10 absolute"
           />
         </div>
         <div className="hero-content  w-full h-full justify-center items-center flex flex-col translate-y-30 gap-3 pt-30  relative  " >

@@ -187,7 +187,7 @@ const IntroSection = () => {
     })
 
   return (
-    <div className="intro-section w-full flex flex-col min-h-dvh items-center relative overflow-hidden   pb-[500px] " style={{}}>
+    <div className="intro-section w-dvw flex flex-col min-h-dvh items-center relative overflow-hidden   pb-[500px]    " style={{}}>
 
       
         <div className=" flex flex-col  items-start w-[350px]  md:w-[1000px] pt-[200px] pb-[500px] justify-start ">
