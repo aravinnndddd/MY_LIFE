@@ -29,6 +29,10 @@ export default function HeroSection() {
       type : 'words ,lines'
     })
 
+    const dollarSplit = SplitText.create('.dollar-text', {
+      type:'chars'
+    })
+
     const tl = gsap.timeline()
 
     tl.from(titleSplit.words, {
@@ -49,6 +53,10 @@ export default function HeroSection() {
       },
       duration: 7
     },'-=.5')
+    .fromTo(dollarSplit.chars, 
+      { opacity: 0, scale: 0, y: 30 },  // start small + lower
+      { opacity: 1, scale: 1, y: 0, ease: 'elastic.out(1, 0.5)', stagger: 0.3 }
+    , '-=2');
 
 
     
@@ -85,82 +93,8 @@ export default function HeroSection() {
   
 
 
-mm.add("(max-width: 639px)", () => {
-  // mobile (smaller x)
 
-  gsap.set("#js", { x: -2200, opacity: 0, scale:.5, y:-200, rotation: 0, transformOrigin: "50% 50%" });
-  gsap.set('#python-group',{ x: -2700, opacity: 0, scale:.5, y:-200, rotation: 0, transformOrigin: "50% 50%" } )
-  gsap.set('#java',{ x: -3200, opacity: 0, scale:.5, y:-200, rotation: 0, transformOrigin: "50% 50%" } )
-  
-
-  dollarTL.to("#js", {
-    duration: 2,
-    opacity: 1,          // Fade in if needed
-    ease: "power1.inOut",
-  }, 0) // start at 0 seconds
-
-  .to("#js", {
-    duration: 7,
-    x: contentBox, // 20vw in pixels
-    rotation: 360*3,       // 2 full rotations
-    ease: "power4.inOut",
-  }, 0) // sync rotation with movement
-
-  .to("#js path", {
-    duration: 4,
-    delay:6,
-    morphSVG: "#dollar path",
-    ease: "power1.out",
-  }, 0)
-
-  pythonTL.to("#python-group", {
-    duration: 2,
-    opacity: 1,          // Fade in if needed
-    ease: "power1.inOut",
-  }, 0) // start at 0 seconds
-
-  .to("#python-group", {
-    duration: 7,
-    x: -1850,                // Move to natural position
-    rotation: 360*3,       // 2 full rotations
-    ease: "power4.inOut",
-  }, 0) // sync rotation with movement
-
-  .to("#python-group path", {
-    duration: 4,
-    delay:6,
-    morphSVG: "#dollar-python path",
-    ease: "power1.out",
-  }, 0)
-
-  javaTL.to("#java", {
-    duration: 2,
-    opacity: 1,          // Fade in if needed
-    ease: "power1.inOut",
-  }, 0) // start at 0 seconds
-
-  .to("#java", {
-    duration: 7,
-    x: -1950,                // Move to natural position
-    rotation: 360*3,       // 2 full rotations
-    ease: "bounce.out",
-  }, 0) // sync rotation with movement
-
-  .to("#java path", {
-    duration: 4,
-    delay:6,
-    morphSVG: "#dollar-java path",
-    ease: "power1.out",
-  }, 0)
-  
-});
-
-mm.add("(min-width: 640px) and (max-width: 1023px)", () => {
-  // tablet (medium x)
-  
-});
-
-mm.add("(min-width: 1024px)", () => {
+mm.add("(min-width: 1280px)", () => {
   // desktop (larger x)
 
   gsap.set("#js", { x: -2000, opacity: 0, scale:.7, y:-60, rotation: 0, transformOrigin: "50% 50%" });
@@ -246,7 +180,7 @@ mm.add("(min-width: 1024px)", () => {
         </div>
         <div className="hero-content  w-full h-full justify-center items-center flex flex-col translate-y-30 gap-3 pt-30  relative  " >
       
-          <p style={{ }} className="hero-caption text-6xl lg:text-8xl -mt-56 w-[300px] lg:w-[550px] self-center  font-heading tracking-tighter  font-extrabold text-sand  ">I turn <span className="text-[#2e54d1] gibberish opacity-1">computer gibberish</span> into things that make businesses</p>
+          <p style={{ }} className="hero-caption text-6xl  xl:text-8xl -mt-56 w-[300px] lg:w-[550px] self-center  font-heading tracking-tighter  font-extrabold text-sand  ">I turn <span className="text-[#2e54d1] gibberish opacity-1">computer gibberish</span> into things that make businesses<span className="text-customBlue dollar-text xl:hidden"><br/>$$$</span></p>
 
           <svg id="Layer_1" xmlns="http://www.w3.org/2000/svg" version="1.1" viewBox="0 0 667.17 686.54"  className="absolute bottom-20 left-125 w-[200px] z-50 overflow-visible">
             <defs>

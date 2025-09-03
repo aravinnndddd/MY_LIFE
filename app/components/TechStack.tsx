@@ -10,6 +10,7 @@ import { Send } from 'lucide-react';
 import Confetti from './Confetti';
 import ConfettiBurst from './Confetti';
 
+
 gsap.registerPlugin(ScrollTrigger);
 
 const techStack = [
@@ -35,6 +36,7 @@ const TechStack = () => {
   const hasStarted = useRef(false);
   const footerStarted = useRef(false);
   const horizontalSpread = useRef(0);
+  const [isMobile, setIsMobile] = useState(false)
 
   const [ contactStep, setContactStep ] = useState<  'message' | 'email' | 'subject' >('message')
   const [ hideForm, setHideForm ] = useState(true)
@@ -46,6 +48,7 @@ const TechStack = () => {
   const [shouldFireConfetti, setShouldFireConfetti] = useState(false)
 
   // let footerShown = false;
+
 
 
   useEffect(() => {
@@ -76,8 +79,10 @@ const TechStack = () => {
       Matter.World.add(world, walls);
 
       // Create plates
-      const plateHeight = 50;
-      const plateWidth = 300;
+      const isMobile = window.innerWidth < 1024
+
+      const plateHeight = isMobile ? 40 :  50;
+      const plateWidth = isMobile ? 120 : 300;
       const spacing = 10;
 
       const bodies = techStack.map((item, i) => {
@@ -100,7 +105,6 @@ const TechStack = () => {
           font-weight: bold;
           user-select: none;
           pointer-events: none;
-          font-family: sans-serif;
         `;
         container.appendChild(el);
 
@@ -119,13 +123,16 @@ const TechStack = () => {
         Matter.World.add(world, body);
         return { body, el };
       });
-
+      
       bodiesRef.current = bodies;
-
+      
+      
+     
 
 
       const render = () => {
         console.log("HELLO FROM RENDER")
+        
         Matter.Engine.update(engine);
         bodies.forEach(({ body, el }) => {
           el.style.transform = `translate(${body.position.x - plateWidth / 2}px, ${body.position.y - plateHeight / 2}px) rotate(${body.angle}rad)`;
@@ -150,12 +157,12 @@ const TechStack = () => {
             duration: 3,
             ease: 'power3.out',
           })
-          .to('.footer-text-2', {
-            opacity: 1,
-            y: 0,
-            duration: 3,
-            ease: 'power3.out',
-          }, '-=0.5')
+          // .to('.footer-text-2', {
+          //   opacity: 1,
+          //   y: 0,
+          //   duration: 3,
+          //   ease: 'power3.out',
+          // }, '-=0.5')
           .to('.footer-text-3', {
             opacity: 1,
             y: 0,
@@ -170,12 +177,29 @@ const TechStack = () => {
           }, '-=1.5')
         }
       };
+
+      if (window.innerWidth < 1370) {
+        console.log("is mobile")
+        setIsMobile(true)
+        setTimeout(() => {
+          bodies.forEach(({ body }, i) => {
+            const forceMagnitude = 0.05; // tweak for more/less scatter
+            Matter.Body.applyForce(body, body.position, {
+              x: (Math.random() * (100 - 1) + 1) * forceMagnitude,
+              y: (Math.random() * (150 - 1) + 1) * forceMagnitude,
+            });
+          });
+
+        }, 1800)
+      }
       render();
 
      
 
 
     };
+
+    
 
     const cleanupPhysics = () => {
       console.log("CLEAN UP PHYSICS")
@@ -233,6 +257,7 @@ const TechStack = () => {
     const mouseX = e.clientX - bounds.left;
     const mouseY = e.clientY - bounds.top;
 
+
     const maxDist = 300;
     const forceMultiplier = 10;
 
@@ -240,6 +265,7 @@ const TechStack = () => {
       const dx = body.position.x - mouseX;
       const dy = body.position.y - mouseY;
       const dist = Math.sqrt(dx * dx + dy * dy);
+
 
       if (dist < maxDist) {
         const force = (1 - dist / maxDist) * forceMultiplier;
@@ -251,15 +277,14 @@ const TechStack = () => {
     });
   };
 
-  const handleNext = () => {
+  const handleNext = async () => {
     if (contactStep === 'message'){
       setContactStep('email')
     } else if (contactStep === 'email'){
       setContactStep('subject')
     } else if (contactStep === 'subject'){
-      setShouldFireConfetti(true)
-      setHideForm(true)
-      setContactStep('message')
+      await handleFormSubmit()
+    
       // setShouldFireConfetti(false)
     }
   }
@@ -274,13 +299,59 @@ const TechStack = () => {
     }
   }
 
+  const handleChange = (e: React.ChangeEvent<HTMLInputElement> | React.ChangeEvent<HTMLTextAreaElement>) => {
+    setInput( prev => ({
+      ...prev,
+      [e.target.name] : e.target.value
+  }))
+  }
+
   const handleFormSubmit = async () => {
 
+    
+    const params = {
+      from : input.email,
+      subject : input.subject ,
+      message : input.message
+    }
+    console.log('PARAMS', params)
+    try {
+      const res = await fetch('/api/send', {
+        method : 'POST',
+        headers : {
+          'Content-type' : 'application/json'
+        },
+        body : JSON.stringify(params)
+      })
+
+      const data = await res.json()
+      console.log('data back is ', data)
+      if (res.ok){
+        console.log(data.message)
+        setShouldFireConfetti(true)
+        setHideForm(true)
+        setInput({
+          message : '',
+          email: '',
+          subject: ''
+        })
+        setContactStep('message')
+      } else {
+        console.log(data.message)
+      }
+
+    } catch (err){
+      console.log('something went wrong')
+    }
   }
+
+  const openGH = () => {
+    window.open('https://www.github.com/fadestocodes', '_blank')
+}
 
 
   return (
-    <div className='footer-wrapper'>
+    <div className='footer-wrapper '>
 
       <ConfettiBurst shouldFire={shouldFireConfetti}  />
 
@@ -295,17 +366,18 @@ const TechStack = () => {
           height: '100vh',
           position: 'relative',
           overflow: 'hidden',
+          
         }}
       >
 
       </div>
       <div className='footer-content'>
-        <div className='footer-text '>
-            <h2 className='footer-text-1 text-white  font-heading text-5xl font-semibold text-center opacity-0' >Looks like you overflowed my tech stack...</h2>
-            <h2 className='footer-text-2 text-white  font-heading text-5xl font-semibold text-center opacity-0' >Get it?</h2>
-            <h2 className=' footer-text-3 text-white  font-heading text-5xl font-semibold text-center pt-8 opacity-0' >Yeah, that was lame, but at least say hi.</h2>
+        <div style={{ display: isMobile && !hideForm ? 'none' : 'block' }} className='footer-text '>
+            <h2 className='footer-text-1 text-white  font-heading text-2xl md:text-5xl font-semibold text-center   opacity-0' >Looks like you overflowed my tech stack...</h2>
+            {/* <h2 className='footer-text-2 text-white  font-heading text-2xl md:text-5xl font-semibold text-center   pt-8 opacity-0' >Get it?</h2> */}
+            <h2 className=' footer-text-3 text-white  font-heading text-2xl md:text-5xl font-semibold text-center   pt-8 opacity-0' >Okay that was lame, but feel free to say hi.</h2>
         </div>
-        <div className='footer-cta'>
+        <div style={{ flexDirection: isMobile ? 'column' : 'row' }} className='footer-cta '>
           <div className='cta-left'>
             <div className='headshot w-[120px] h-[120px] overflow-hidden rounded-full'>
               <Image
@@ -318,11 +390,11 @@ const TechStack = () => {
             </div>
             <div className='cta-ui'>
                 <div className='buttons'>
-                  <div onClick={()=> setHideForm(false)} className='send-button'>
+                  <div style={{ display : isMobile && !hideForm ? 'none' : 'flex' }} onClick={()=> setHideForm(false)} className='send-button'>
                     <Send size={26} color='#2e54d1' />
                     <p className='font-heading text-customBlue font-bold text-lg  '>Message</p>
                   </div>
-                  <div className='gh-button'>
+                  <div onClick={openGH} className='gh-button'>
                     <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#2e54d1" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="lucide lucide-github-icon lucide-github"><path d="M15 22v-4a4.8 4.8 0 0 0-1-3.5c3 0 6-2 6-5.5.08-1.25-.27-2.48-1-3.5.28-1.15.28-2.35 0-3.5 0 0-1 0-3 1.5-2.64-.5-5.36-.5-8 0C6 2 5 2 5 2c-.3 1.15-.3 2.35 0 3.5A5.403 5.403 0 0 0 4 9c0 3.5 3 5.5 6 5.5-.39.49-.68 1.05-.85 1.65-.17.6-.22 1.23-.15 1.85v4"/><path d="M9 18c-4.51 2-5-2-7-2"/></svg>
                     <p className='font-heading text-customBlue font-bold text-lg  '>Github</p>
                   </div>
@@ -331,30 +403,31 @@ const TechStack = () => {
           </div>
 
           { !hideForm && (
-            <div className={`cta-right ` }>
-              <form onSubmit={handleFormSubmit} className='contact-form'>
+            <div className='cta-right '>
+              <form action={handleFormSubmit} className='contact-form'>
 
                 { contactStep === 'message' ? (
                   <>
                     <label htmlFor="message" className='form-label'>Message</label>
-                    <textarea   name='message' className='message-input'  maxLength={500} placeholder='Say hello and whatever is on your mind'/>
+                    <textarea onChange={handleChange} value={input.message} style={{ width: isMobile ? 300 : 700  }}  name='message' className='message-input'  maxLength={500} placeholder='Say hello and whatever is on your mind'/>
                   </>
 
                 ) : contactStep === 'email' ? (
                   <>
                     <label htmlFor="email" className='form-label'>Email</label>
-                    <input type="email" name='email' className='email-input'  placeholder='johndoe@gmail.com' />
+                    <input onChange={handleChange} value={input.email}  type="email" name='email' className='email-input'  placeholder='johndoe@gmail.com' />
                   </>
 
                 ) : contactStep === 'subject' && (
                   <>
                     <label htmlFor="subject" className='form-label'>Subject</label>
-                    <input type="text" name='subject' className='subject-input'  placeholder='This email is about...' />
+                    <input onChange={handleChange} value={input.subject} type="text" name='subject' className='subject-input'  placeholder='This email is about...' />
                   </>
                 )}
                 <div className='form-buttons'>
-                  <div onClick={handleBack} className='back-button'>Back</div>
-                  <div onClick={handleNext} className='form-send-button' >Next</div>
+                  <div style={{backgroundColor:'white'}} onClick={handleBack} className='back-button'>Back</div>
+                  <div style={{ backgroundColor : 'white', textAlign:'center'  }} onClick={handleNext} className='form-send-button' >Next</div>
+                  {/* <button style={{ backgroundColor : 'white', display : contactStep === 'subject' ?  'inherit' : 'none' , textAlign:'center'}}  type='submit' className='form-send-button ' >Send</button> */}
                 </div>
               </form>
             </div>

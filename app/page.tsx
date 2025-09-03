@@ -38,7 +38,7 @@ export default function Home() {
       <TimelineSection />
       <TestimonialsIntro />
       <Testimonials />
-      {/* <TechStack /> */}
+      <TechStack />
 
     </div>
   );

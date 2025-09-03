@@ -547,7 +547,7 @@ const BingeableShowcase = () => {
         scrollTrigger:{
             start : 'left 70%',
             trigger:'.challenges-2',      
-            toggleActions: 'play reset play reset',
+            // toggleActions: 'play reset play reset',
  
         }
       })
@@ -560,7 +560,7 @@ const BingeableShowcase = () => {
         scrollTrigger:{
             start : 'left 70%',
             trigger:'.challenges-2', 
-            toggleActions: 'play reset play reset',
+            // toggleActions: 'play reset play reset',
       
         }
       })
@@ -573,7 +573,7 @@ const BingeableShowcase = () => {
         scrollTrigger:{
             start : 'left 70%',
             trigger:'.challenges-3', 
-            toggleActions: 'play reset play reset',
+            // toggleActions: 'play reset play reset',
       
         }
       })
@@ -586,7 +586,7 @@ const BingeableShowcase = () => {
         scrollTrigger:{
             start : 'left 70%',
             trigger:'.challenges-3',    
-            toggleActions: 'play reset play reset',
+            // toggleActions: 'play reset play reset',
    
         }
       })
@@ -761,7 +761,7 @@ const BingeableShowcase = () => {
             start : 'top 80%',
             end:'bottom center',
             trigger:'.challenges',      
-            toggleActions: 'play reset play reset',
+            // toggleActions: 'play reset play reset',
  
             markers:true     
 
@@ -911,11 +911,11 @@ const BingeableShowcase = () => {
             ) : (
 
             <div style={{zIndex:50}} className='flex flex-col  justify-center items-start h-full  w-full  '>
-              <div className='flex flex-wrap gap-3 px-10 w-full relative '>
+              <div className='flex flex-wrap gap-3 px-10 w-full relative  '>
                 { frontEndPoints.map( (data,index) => (
                   <div key={index}
-                  onClick={()=> {console.log('hello');setFrontEndHoverIndex(index); setFrontEndImage(data.image)}}>
-                    <p className={` ${frontEndHoverIndex === index ? 'bg-white text-customBlack' : ' bg-none text-white'}   text-center cursor-pointer border-2 rounded-full border-white   px-2 font-heading  font-semibold   `}>{data.content.title}</p>
+                  onClick={()=> {setFrontEndHoverIndex(index); setFrontEndImage(data.image)}}>
+                    <p className={` ${frontEndHoverIndex === index ? 'bg-white text-customBlack' : ' bg-none text-white'} cursor-pointer border-2 rounded-full border-white   px-4 py-1 text-left text-xs font-heading  font-semibold   `}>{data.content.title}</p>
                   </div>
                 ) ) }
               </div>
@@ -994,8 +994,9 @@ const BingeableShowcase = () => {
               <div className='flex flex-wrap gap-3 px-10 w-full relative '>
                 { backendData.map( (data,index) => (
                   <div key={index}
-                  onClick={()=> {console.log('hello');setFrontEndHoverIndex(index); setFrontEndImage(data.image)}}>
-                    <p className={` ${frontEndHoverIndex === index ? 'bg-white text-customBlack' : ' bg-none text-white'}   text-center cursor-pointer border-2 rounded-full border-white   px-2 font-heading  font-semibold   `}>{data.content.title}</p>
+                  style={{ pointerEvents:'auto',  cursor:'pointer', zIndex:50}}
+                  onClick={()=> {console.log('hello');setBackEndHoverIndex(index); setBackendImage(data.image)}}>
+                    <p className={` ${backEndHoverIndex === index ? 'bg-white text-customBlack' : ' bg-none text-white'} text-xs text-left cursor-pointer border-2 rounded-full border-white   px-4 font-heading  py-1 font-semibold   `}>{data.content.title}</p>
                   </div>
                 ) ) }
               </div>
@@ -1007,7 +1008,7 @@ const BingeableShowcase = () => {
                 className={` w-full mt-2   ${imageFullscreen === backEndHoverIndex ? ' h-dvh top-0 left-0 absolute cursor-zoom-out overflow-scroll' : ' h-[600px] cursor-zoom-in overflow-hidden ' }  `}>
                   {
                       <Image
-                      src={ frontEndImages[backEndHoverIndex] }
+                      src={ backendImages[backEndHoverIndex] }
                       width={500}
                       height={900}
                       alt='code-snippet'
@@ -1023,7 +1024,7 @@ const BingeableShowcase = () => {
             
         </div>
 
-        <div className='bingeable-element challenges pt-10 w-dvw px-8'>
+        <div className='bingeable-element challenges h-full pt-10 w-dvw px-8 '>
           <div className="challenges-container flex flex-col justify-center items-center  gap-3 w-full" >
             <div className='challenges-text-container flex flex-col justify-center items-center gap-3'>
               <h2 className='challenges-title text-customBlue font-bold font-heading tracking-[0.3em] uppercase' style={{clipPath: "polygon(0 0, 0 0, 0 100%, 0% 100%)"}}>Challenges</h2>
@@ -1037,9 +1038,9 @@ const BingeableShowcase = () => {
             </div>
           </div>
         </div>
-        <div className='challenges-2 w-dvw px-8 h-full'>
+        <div className='challenges-2 w-dvw px-8 h-full '>
           <h2  className='challenges-title text-customBlue font-bold font-heading tracking-[0.3em] uppercase pt-10 w-full hidden lg:flex ' >Challenges</h2>
-          <div className='challenges-2 relative justify-center items-center pt-40 lg:pt-20'>
+          <div className='challenges-2 relative justify-center items-center  lg:pt-20'>
 
             <h3 id='challenge-problem-2' className='challenge-problem ' style={{clipPath: "polygon(0 0, 0 0, 0 100%, 0% 100%)"}}>Challenge #2: Building the algorithm for user's feeds.</h3>
             <p id='challenge-solution-2' className='challenge-solution top-95' style={{clipPath: "polygon(0 0, 100% 0%, 100% 0%, 0 0%)"}}>Approach: I didn't want to overcomplicate this early in the app. So for now, the feed is more chronological based, pulling data from different models such as a user's friend's activities,
