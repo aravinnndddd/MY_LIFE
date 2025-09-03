@@ -3,7 +3,7 @@ import z from "zod";
 export const contactSchema = z.object({
     message : z
     .string()
-    .min(2, { message : 'Message must have at least 2 characters'}),
+    .min(10, { message : 'Message must have at least 10 characters'}),
 
     email : z
     .email({ message : 'Please enter a valid email address'}),

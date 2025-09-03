@@ -478,7 +478,7 @@ const TechStack = () => {
                 { contactStep === 'message' ? (
                   <>
                    { zodErrors.message && (
-                      <p className='zod-error'>{zodErrors.message}</p>
+                      <p className='zod-error'>*{zodErrors.message}</p>
                     ) }
                     <label htmlFor="message" className='form-label'>Message</label>
                     <textarea onChange={handleChange} value={input.message} style={{ width: isMobile ? 300 : 700  }}  name='message' className='message-input'  maxLength={500} placeholder='Say hello and whatever is on your mind'/>
@@ -487,7 +487,7 @@ const TechStack = () => {
                 ) : contactStep === 'email' ? (
                   <>
                     { zodErrors.email && (
-                      <p className='zod-error'>{zodErrors.email}</p>
+                      <p className='zod-error'>*{zodErrors.email}</p>
                     ) }
                     <label htmlFor="email" className='form-label'>Email</label>
                     <input onChange={handleChange} value={input.email}  type="email" name='email' className='email-input'  placeholder='johndoe@gmail.com' />
@@ -496,7 +496,7 @@ const TechStack = () => {
                 ) : contactStep === 'subject' && (
                   <>
                    { zodErrors.subject && (
-                      <p className='zod-error'>{zodErrors.subject}</p>
+                      <p className='zod-error'>*{zodErrors.subject}</p>
                     ) }
                     <label htmlFor="subject" className='form-label'>Subject</label>
                     <input onChange={handleChange} value={input.subject} type="text" name='subject' className='subject-input'  placeholder='This email is about...' />
