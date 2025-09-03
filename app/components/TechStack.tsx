@@ -52,6 +52,8 @@ const TechStack = () => {
 
   const [shouldFireConfetti, setShouldFireConfetti] = useState(false)
 
+  const [ showUI, setShowUI ] = useState(false)
+
   // let footerShown = false;
 
 
@@ -109,8 +111,7 @@ const TechStack = () => {
           left: 0;
           font-weight: bold;
           user-select: none;
-          pointer-events: none;
-          z-index:50;
+          z-index:30;
         `;
         container.appendChild(el);
 
@@ -152,6 +153,7 @@ const TechStack = () => {
         if (horizontalSpread.current > 200 && !footerStarted.current) {
 
           footerStarted.current = true;
+          setShowUI(true)
 
           const footerTL = gsap.timeline({
           })
@@ -204,6 +206,7 @@ const TechStack = () => {
     const cleanupPhysics = () => {
       console.log("CLEAN UP PHYSICS")
       footerStarted.current = false
+      setShowUI(false)
       horizontalSpread.current = 0
 
       if (engineRef.current) {
@@ -414,6 +417,7 @@ const TechStack = () => {
 
       <div
         ref={containerRef}
+        className=''
         onMouseMove={handleMouseMove}
         style={{
           width: '100vw',
@@ -423,11 +427,12 @@ const TechStack = () => {
           height: '100vh',
           position: 'relative',
           overflow: 'hidden',
-          
         }}
       >
 
       </div>
+
+          
       <div className='footer-content' >
         <div style={{ display: isMobile && !hideForm ? 'none' : 'block' }} className='footer-text '>
             <h2 className='footer-text-1 text-white  font-heading text-2xl md:text-5xl font-semibold text-center   opacity-0' >Looks like you overflowed my tech stack...</h2>
@@ -444,7 +449,7 @@ const TechStack = () => {
                 className='w-full h-full object-cover scale-125'
               />
             </div>
-            <div className='cta-ui'>
+            <div className={`cta-ui`}>
                 <div className='buttons'>
                   <div style={{ display : isMobile && !hideForm ? 'none' : 'flex' }} onClick={()=> setHideForm(false)} className='send-button'>
                     <Send size={26} color='#2e54d1' />

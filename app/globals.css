@@ -226,7 +226,7 @@ text {
 }
 
 .footer-wrapper{
-  @apply w-dvw h-dvh flex relative flex-col overflow-hidden
+  @apply w-dvw h-dvh flex relative flex-col 
 }
 
 .footer{
@@ -234,7 +234,7 @@ text {
 }
 
 .footer-content{
-  @apply flex flex-col gap-10 w-dvw h-dvh overflow-hidden absolute top-80 left-1/2  -translate-x-1/2 -translate-y-1/2  justify-center items-center pointer-events-none
+  @apply flex flex-col gap-10 w-dvw h-dvh overflow-hidden absolute top-80 left-1/2  -translate-x-1/2 -translate-y-1/2  justify-center items-center 
 }
 
 .confetti{
@@ -246,7 +246,7 @@ text {
 }
 
 .footer-cta{
-  @apply pt-10 gap-10 flex flex-col w-dvw  px-20 lg:flex-row justify-center items-center translate-y-10 opacity-0 relative  pointer-events-auto
+  @apply pt-10 gap-10 flex flex-col w-dvw  px-20 lg:flex-row justify-center items-center translate-y-10 opacity-0 relative  
 }
 
 .buttons{

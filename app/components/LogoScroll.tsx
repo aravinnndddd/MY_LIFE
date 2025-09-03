@@ -1,7 +1,13 @@
 import Image from 'next/image'
 import React from 'react'
+import { LogoType } from '../lib/types'
 
-const LogoScroll = ({ data , className=''}) => {
+type LogoScrollProps = {
+  data: LogoType[];
+  className?: string;
+};
+
+const LogoScroll = ({ data , className=''} : LogoScrollProps) => {
   return (
     <div className={`logo-scroll-container ${className}`}>
         { data.map( icon => (

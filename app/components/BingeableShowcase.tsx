@@ -241,10 +241,6 @@ const BingeableShowcase = () => {
             end:'bottom center',
             containerAnimation:tl,
             trigger:'.challenges',      
- 
-            markers:true     
-
-
         }
       })
 
@@ -761,10 +757,6 @@ const BingeableShowcase = () => {
             end:'bottom center',
             trigger:'.challenges',      
             // toggleActions: 'play reset play reset',
- 
-            markers:true     
-
-
         }
       })
 
@@ -899,7 +891,7 @@ const BingeableShowcase = () => {
                     <div className=' front-end-text  lg:flex flex-col justify-start items-center w-[900px] gap-3'  >
                         { frontEndPoints.map( (data,index) => (
                             <div key={index} className='rounded-xl p-4 cursor-pointer   ' style={{ backgroundColor: frontEndHoverIndex === index ? '#2e54d1' : undefined  ,opacity : frontEndHoverIndex === index ? 1 : 0.5  }}
-                                onMouseEnter={()=> {setFrontEndHoverIndex(index); setFrontEndImage(data.image)}}
+                                onMouseEnter={()=> {setFrontEndHoverIndex(index)}}
                             >
                                 <h3 className=" font-black text-lg font-heading w-full uppercase  ">{data.content.title}</h3>
                                 <p className={`font-heading front-end-body  font-semibold ` }>{data.content.body}</p>
@@ -913,7 +905,7 @@ const BingeableShowcase = () => {
               <div className='flex flex-wrap gap-3 px-10 w-full relative  '>
                 { frontEndPoints.map( (data,index) => (
                   <div key={index}
-                  onClick={()=> {setFrontEndHoverIndex(index); setFrontEndImage(data.image)}}>
+                  onClick={()=> {setFrontEndHoverIndex(index)}}>
                     <p className={` ${frontEndHoverIndex === index ? 'bg-white text-customBlack' : ' bg-none text-white'} cursor-pointer border-2 rounded-full border-white   px-4 py-1 text-left text-xs font-heading  font-semibold   `}>{data.content.title}</p>
                   </div>
                 ) ) }
@@ -977,7 +969,7 @@ const BingeableShowcase = () => {
                 <div className='backend-text flex flex-col justify-start items-center w-[900px] gap-3  '>
                     { backendData.map( (data,index) => (
                         <div key={index} className='rounded-xl p-4 cursor-pointer   ' style={{ backgroundColor: backEndHoverIndex === index ? '#2e54d1' : undefined  ,opacity : backEndHoverIndex === index ? 1 : 0.5  }}
-                        onMouseEnter={()=> {setBackEndHoverIndex(index); setBackendImage(data.image)}}
+                        onMouseEnter={()=> {setBackEndHoverIndex(index)}}
                     >
                             
                                 <h3 className="  font-heading font-black text-lg uppercase ">{data.content.title}</h3>
@@ -994,7 +986,7 @@ const BingeableShowcase = () => {
                 { backendData.map( (data,index) => (
                   <div key={index}
                   style={{ pointerEvents:'auto',  cursor:'pointer', zIndex:50}}
-                  onClick={()=> {console.log('hello');setBackEndHoverIndex(index); setBackendImage(data.image)}}>
+                  onClick={()=> {console.log('hello');setBackEndHoverIndex(index)}}>
                     <p className={` ${backEndHoverIndex === index ? 'bg-white text-customBlack' : ' bg-none text-white'} text-xs text-left cursor-pointer border-2 rounded-full border-white   px-4 font-heading  py-1 font-semibold   `}>{data.content.title}</p>
                   </div>
                 ) ) }

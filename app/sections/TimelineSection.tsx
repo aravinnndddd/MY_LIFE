@@ -46,7 +46,7 @@ const TimelineSection = () => {
         .to(".ball09, .text07, #text-2024, #camera-op, #still-1, #still-2, #still-3", {}, 0.54)
         .to(".ball10, .text08, #text-2025", {}, 0.62)
         
-        const main = gsap
+        gsap
         .timeline({
           defaults: { duration: 1 },
           scrollTrigger: {

@@ -8,7 +8,7 @@ import gsap from "gsap";
 export default function HeroSection() {
   useGSAP(()=>{
     
-
+    
     const heroTL = gsap.timeline({
       scrollTrigger: {
         trigger:'.hero-section',
@@ -49,7 +49,6 @@ export default function HeroSection() {
       scrambleText: {
         text: "{original}",
         chars: "lowerCase",
-        // revealDelay:3
       },
       duration: 7
     },'-=.5')
@@ -67,29 +66,29 @@ export default function HeroSection() {
     // });
 
 
-    const dollarTL = gsap.timeline({
-      delay:.5
-    });
-    const pythonTL = gsap.timeline({
-      delay:3
-    })
-    const javaTL = gsap.timeline({
-      delay:6
-    })
+    // const dollarTL = gsap.timeline({
+    //   delay:.5
+    // });
+    // const pythonTL = gsap.timeline({
+    //   delay:3
+    // })
+    // const javaTL = gsap.timeline({
+    //   delay:6
+    // })
 
 
     // Start #js off screen left and invisible (optional)
 
 
-    const mm = gsap.matchMedia();
-    const jsEl = document.querySelector("#Layer_1")
-    const contentEl = document.querySelector(".hero-content")
+    // const mm = gsap.matchMedia();
+    // const jsEl = document.querySelector("#Layer_1")
+    // const contentEl = document.querySelector(".hero-content")
   
-    const contentBox = contentEl.getBoundingClientRect()
-    const jsBox = jsEl.getBoundingClientRect()
+    // const contentBox = contentEl.getBoundingClientRect()
+    // const jsBox = jsEl.getBoundingClientRect()
   
     // Target: move svg so its left aligns with hero-content’s left
-    const targetX = contentBox.left - jsBox.left
+    // const targetX = contentBox.left - jsBox.left
   
 
 
