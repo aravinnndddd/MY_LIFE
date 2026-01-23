@@ -444,7 +444,7 @@ const TechStack = () => {
           <div className='cta-left'>
             <div className='headshot w-[120px] h-[120px] overflow-hidden rounded-full'>
               <Image
-                src='/headshot.jpg'
+                src='/picture of syam_.jpg'
                 alt='profile-pic'
                 height={300}
                 width={300}
