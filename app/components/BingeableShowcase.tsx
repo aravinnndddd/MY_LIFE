@@ -831,7 +831,7 @@ const BingeableShowcase = () => {
                                 alt='bingeable-icon'
                                 className=''
                             />
-                           <h3 className=' font-extrabold text-3xl  lg:text-4xl xl:text-5xl text-sand font-bingeable '>Bingeable</h3>
+                           <h3 className=' font-extrabold text-3xl  lg:text-4xl xl:text-5xl text-sand font-bingeable '>SYAMKUMARSS</h3>
                         </div>
                         <h3 className="text-lg lg:text-xl  xl:text-2xl  font-bold text-sand font-bingeable ">A social media for film lovers and filmmakers.</h3>
                         <Image
@@ -1060,7 +1060,7 @@ const BingeableShowcase = () => {
                 alt='bingeable-icon'
                 className='bingeable-logo-final '
               />
-              <h3 className='bingeable-text font-extrabold text-3xl lg:text-5xl text-sand font-bingeable  '>Bingeable</h3>
+              <h3 className='bingeable-text font-extrabold text-3xl lg:text-5xl text-sand font-bingeable  '>SYAMKUMARSS</h3>
             </div>
         </div>
 

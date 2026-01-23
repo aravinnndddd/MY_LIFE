@@ -8,6 +8,7 @@ import gsap from "gsap";
 import HeroSection from "./sections/HeroSection";
 import { ScrollTrigger } from 'gsap/dist/ScrollTrigger';
 import IntroSection from "./sections/IntroSection";
+import TrailerSection from "./sections/TrailerSection";
 import ProjectsSection from "./sections/ProjectsSection";
 import BingeableShowcase from "./components/BingeableShowcase";
 import TimelineSection from "./sections/TimelineSection";
@@ -36,6 +37,7 @@ export default function Home() {
       <div id="smooth-content">
         <HeroSection />
         <IntroSection />
+        <TrailerSection />
         <ProjectsSection />
         <BingeableShowcase />
         <TimelineIntro  />

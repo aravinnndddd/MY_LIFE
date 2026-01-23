@@ -10,62 +10,62 @@ type bingeablePointsData = {
 
 export const frontEndPoints : bingeablePointsData[] = [
     {
-        image : '/custom-hook.png',
+        image : '/2.png',
         content: {
-                title : 'Custom Hooks',
-                body : "In this snippet, I've created a custom hook that fetches a film/tv Review data. This encapsulates the fetch logic and all of its related code like refetch and fetchMore for cursor based fetching which separates concerns from the rest of the parent component."
+                title : 'Day 0: Biological Mutiny - The Body That Fought Its Design',
+                body : "Kulathummal Village, Kerala. 2001. Normal delivery for 47 seconds. Then silence fell across the delivery room. Right leg twisted, fused toward buttocks. Blue spinal mark stained his spine like spilled ink. Spina bifida lipomeningocele. Three kidneys. Neurogenic bladder. Survival odds: 23%. This wasn't birth - this was biological mutiny. The war between Syam and his own body had begun."
             }
     },
     {
-        image : '/infinite-scrolling-ui.png',
+        image : '/3.png',
         content : {
-            title : 'Infinite Scrolling',
-            body : "Here's a simple use of a FlatList UI which supports infinite scrolling, when a user reaches the bottom if there is more data, it'll fetch more and append it to the FlatList."
+            title : 'Age 8: The Choice - Operation Room #7',
+            body : "Chronic osteomyelitis climbed the deformed leg like poison ivy. Sepsis loomed. Doctors delivered the ultimatum: 'Keep the leg = guaranteed death by 12. Amputate above-knee = live without natural balance.' 8-year-old Syam stared at infection climbing his fused leg. Mother held his hand. 'Choose life,' she whispered. Surgeons cut. Chronic pain vanished instantly. Childhood balance disappeared forever. He chose to live."
         }
     },
     {
-        image : '/comment-interaction.png',
+        image : '/5.png',
         content : {
-            title : 'Comment Interactions & Optimistic UI Updates',
-            body : "Working on this was a bit of a headache with lots of states to keep track of, whether upvoting or replying to a comment. I'm also optimistically updating the UI so it provides a better UX, so once a user interacts (ex. upvotes a comment), the thumbsUp icon will be highlighted immediately, while updating this in my DB after. On a refresh, this data will be synced up."
+            title : 'Age 22: Gravity Defied - 13,000ft World Record',
+            body : "Post-transplant doctors said 'rest.' Society said 'safe hobbies.' Syam bought a ticket to Vadodara airfield. 4 hours wind tunnel training: asymmetric flight mastery, core-only stability, single-leg torque control. November 2023: 13,000ft solo jump, no prosthetic. International Book of Records certified. The boy who was never supposed to walk had made the sky his proving ground."
         }
     },
     {
-        image : '/context.png',
+        image : '/6.png',
         content : {
-            title : 'Global State Management with useContext',
-            body : "I usually try to keep things as minimal as possible, and only reaching for tools or methods when I need to. In this example I needed to keep the state of the number of unread notifications so when a user reads it then goes back to the homepage, the UI updates correctly. However, when keeping track of the state inside the notification page and the user router.backs(), this data gets lost. This is a perfect scenario to use useContext to manage global state which can be accesse from any component. I'll look into Zustand or Redux for more complicated needs in the future."
+            title : 'Age 25: Sky Beyond Limits - 43,000ft Mission',
+            body : "₹3.6 Crore mission. Squirrel Wingsuits (USA) engineering custom adaptive wingsuit with asymmetric drag compensation. Gen Robotics (India) developing hand-controlled flight prosthetic with neural interface. Three world records from 43,000+ feet: Altitude, Distance, Speed. 2026 France World Championship. Training window closes Q2 2026. History needs funding. The sky was never the limit - it was just the beginning."
         }
     }
 ]
 
 export const backendData : bingeablePointsData[] = [
     {
-        image : '/cursor-based-pagination.png',
+        image : '/picture of syam_.jpg',
+        content: {
+                title : 'The Hospital Years: 1,247 Days by Age Five',
+                body : "Syam's first five years belonged to antiseptic corridors, not playgrounds. Five major surgeries before kindergarten: spinal defect excision, bladder augmentation, testicular removal, structural stabilization (failed twice), kidney drainage. Catheterization every 2-3 hours to prevent sepsis. His parents learned medical terminology faster than nursery rhymes. Mother became nurse, advocate, warrior when hospitals failed."
+            }
+    },
+    {
+        image : '/picture of syam.jpg',
         content : {
-            title : 'Cursor Based Pagination for Infinite Scrolling',
-            body : "Using Prisma ORM with PostgreSQL, I'm using cursor based pagination so I dont fetch repeated data for the infinite scrolling feature in the front end. This is accomplished by using the id of the final item fetched and using that as a cursor with skipping the first element to avoid repeats."
+            title : 'Kidney Apocalypse: 1,095 Dialysis Sessions',
+            body : "Age 18-21: Duplex kidney failure led to end-stage renal disease. 1,095 dialysis sessions over 3 years. Energy vanished. Future shrank to 'next treatment.' 21 documented surgeries by age 21. Mother's kidney donation in 2022. Rejection episode at week 6 - he survived that too. Immunosuppressed for life. 'One infection kills me now,' he says matter-of-factly. Yet he earned scuba certification post-transplant."
         }
     },
     {
-        image : "/redis.png",
+        image : '/hand stand on modeling_.jpg',
         content : {
-            title : "In Memory Store Caching with Redis",
-            body : "In this example, I'm using Redis to store in-memory some YouTube data. This data doesn't change too frequently so I store this with a TTL of 6 hours. Since the Redis is running on a separate EC2 instance, this will work fine with auto scaling my main server."
+            title : 'Earthbound Rebellion: Movement as Medicine',
+            body : "The first prosthetic weighed 4.2kg - a torture device. Walking became performance art. Age 12: One-legged cycling breakthrough on Kerala roads. 250km Save Alappad campaign (12 hours, coastal erosion awareness). 1000+km endurance rides through Neyyattinkara hills. Kalaripayattu martial art became asymmetric balance training. School isolation, window-gazing during recess. Each pedal stroke drowned the 'freak' whispers."
         }
     },
     {
-        image : "/S3.png",
+        image : '/cycling_.jpg',
         content : {
-            title : "AWS S3 to Store User Uploaded Media with a CDN",
-            body : "When a user uploads any media (ex. a profile picture), this gets stored in a S3 bucket while using Cloudfront CDN to quickly deliver the asset when being used."
+            title : 'Daily Reality: Age 25 - January 22, 2026',
+            body : "05:30: Catheter + immunosuppressants. Scoliosis stretch. 06:30: Kalaripayattu core training. 10:00: Wind tunnel session (France prep). 14:00: Catheter + protein meal (kidney protection). 16:00: Partnership calls (Squirrel/Gen Robotics). 19:00: Mission Impossible motocross training. 22:00: Catheter + recovery. Mission visualization. Physical stats: 72kg, 11% body fat, VO2 max 48. The routine that keeps him alive to fly."
         }
-    },
-    {
-        image : "/url-preview.png",
-        content : {
-            title : "Parsing Text to Extract a URL Preview Thumbnail",
-            body : "Using Regex patterns, I've parsed the html of a URL to first try and get a Open Graph protocol if it exists, and if not I grab the first <img> tag and it's src URL "
-        }
-    },
+    }
 ]

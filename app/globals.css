@@ -14,12 +14,21 @@
 }
 
 :root {
-  --background: #ffffff;
-  --foreground: #0e0e0e;
+  --background: #000000;
+  --foreground: #ffffff;
   
-
+  /* Neon Green, Gray, White, Black Theme */
+  --color-neon-green: #00ff41;
+  --color-gray: #808080;
+  --color-white: #ffffff;
+  --color-black: #000000;
+  --color-dark-gray: #333333;
+  --color-light-gray: #cccccc;
   
-  
+  /* Legacy color mappings for compatibility */
+  --color-customBlue: var(--color-neon-green);
+  --color-sand: var(--color-white);
+  --color-customBlack: var(--color-black);
 }
 
 @theme{
@@ -28,20 +37,28 @@
   --font-paragraph: 'DM Sans', sans-serif;
   --font-heading: "Urbanist", sans-serif;
   --font-bingeable: 'Geist';
-  --color-demonicRed: #BB2233;
-  --color-customBlack: #0e0e0e;
-  --color-sand: #c4b9a5;
-  --color-orange: #FA8603;
-  --color-customBlue: #2e54d1;
+  
+  /* Updated color theme */
+  --color-primary: var(--color-neon-green);
+  --color-secondary: var(--color-gray);
+  --color-accent: var(--color-neon-green);
+  --color-background-primary: var(--color-black);
+  --color-text-primary: var(--color-white);
+  --color-text-secondary: var(--color-gray);
+  
+  /* Legacy colors updated to new theme */
+  --color-demonicRed: var(--color-neon-green);
+  --color-customBlack: var(--color-black);
+  --color-sand: var(--color-white);
+  --color-orange: var(--color-neon-green);
+  --color-customBlue: var(--color-neon-green);
 
 }
 
 @media (prefers-color-scheme: dark) {
   :root {
-    --background: #0e0e0e;
-    --foreground: #ededed;
-
-    
+    --background: #000000;
+    --foreground: #ffffff;
   }
 }
 
@@ -50,8 +67,7 @@ body {
   background: var(--background);
   color: var(--foreground);
   overflow-x: hidden;
-  background-color: #0e0e0e;
-
+  background-color: #000000;
 }
 
 /* h1, h2, h3 {
@@ -80,47 +96,47 @@ p {
 
 
   .intro-1{
-    @apply text-sand   md:text-7xl text-5xl font-extrabold font-heading tracking-tighter
+    @apply text-white   md:text-7xl text-5xl font-extrabold font-heading tracking-tighter
   }
 
   .intro-2{
-    @apply text-sand md:text-7xl text-5xl font-extrabold font-heading tracking-tighter
+    @apply text-white md:text-7xl text-5xl font-extrabold font-heading tracking-tighter
   }
   
   .intro-3{
-    @apply text-sand  md:text-7xl text-5xl font-extrabold font-heading tracking-tighter
+    @apply text-white  md:text-7xl text-5xl font-extrabold font-heading tracking-tighter
   }
 
   .msg-text-scroll{
-    @apply rotate-3 border-12 -m-3 border-customBlack z-10   justify-self-center self-center  translate-x-20
+    @apply rotate-3 border-12 -m-3 border-black z-10   justify-self-center self-center  translate-x-20
   }
   
   .vancouver-canada{
-    @apply font-heading font-bold z-30 text-3xl md:text-5xl p-3 md:p-6 uppercase tracking-tighter 
+    @apply font-heading font-bold z-30 text-3xl md:text-5xl p-3 md:p-6 uppercase tracking-tighter text-black bg-white
   }
 
   .impactful-container{
-    @apply rotate-3 border-12 -m-20 border-customBlack z-10   justify-self-center self-center  translate-x-20  translate-y-[85px] md:translate-y-0
+    @apply rotate-3 border-12 -m-20 border-black z-10   justify-self-center self-center  translate-x-20  translate-y-[85px] md:translate-y-0
 
   }
 
   .impactful{
-    @apply font-heading font-bold z-30 text-3xl md:text-5xl p-2 md:p-6 uppercase tracking-tighter
+    @apply font-heading font-bold z-30 text-3xl md:text-5xl p-2 md:p-6 uppercase tracking-tighter text-black bg-white
   }
   .user-facing-container{
-    @apply -rotate-3 border-12  border-customBlack z-10 -m-34  md:-m-16 justify-self-center self-center  translate-x-20 translate-y-[85px] md:translate-y-0
+    @apply -rotate-3 border-12  border-black z-10 -m-34  md:-m-16 justify-self-center self-center  translate-x-20 translate-y-[85px] md:translate-y-0
 
   }
 
 
 
   .and{
-    @apply font-heading font-bold z-40 text-5xl p-6  text-sand uppercase tracking-tighter mt-28 md:mt-6  border-customBlack  drop-shadow-[0_0_10px_black]  justify-self-center self-center translate-y-20  md:translate-y-20
+    @apply font-heading font-bold z-40 text-5xl p-6  text-white uppercase tracking-tighter mt-28 md:mt-6  border-black  drop-shadow-[0_0_10px_black]  justify-self-center self-center translate-y-20  md:translate-y-20
 
   }
 
   .user-facing{
-    @apply font-heading font-bold z-30 text-3xl md:text-5xl p-2 md:p-6 uppercase tracking-tighter
+    @apply font-heading font-bold z-30 text-3xl md:text-5xl p-2 md:p-6 uppercase tracking-tighter text-black bg-white
 
   }
   
@@ -130,11 +146,11 @@ p {
 
 
 .challenge-problem{
-  @apply -rotate-2 bg-customBlue text-sand font-heading text-lg md:text-3xl px-6 py-10  font-bold w-full   md:w-[800px]  border-10 border-customBlack  
+  @apply -rotate-2 bg-gray-800 text-white font-heading text-lg md:text-3xl px-6 py-10  font-bold w-full   md:w-[800px]  border-10 border-black  
 }
 
 .challenge-solution{
-  @apply rotate-1 bg-sand text-black font-heading md:text-xl font-semibold w-full lg:w-[1000px] border-10 border-customBlack md:absolute  md:left-1/2 transform md:-translate-x-1/2 md:-translate-y-1/2 px-6 py-10 -mt-10 md:mt-0
+  @apply rotate-1 bg-white text-black font-heading md:text-xl font-semibold w-full lg:w-[1000px] border-10 border-black md:absolute  md:left-1/2 transform md:-translate-x-1/2 md:-translate-y-1/2 px-6 py-10 -mt-10 md:mt-0
 }
 
 @keyframes spin-border {
@@ -153,24 +169,24 @@ p {
 }
 
 .ball {
-  fill: var(--color-sand);
+  fill: var(--color-white);
   visibility: hidden;
 }
 
 .line {
   fill: none;
-  stroke: var(--color-sand);
+  stroke: var(--color-white);
   stroke-width: 2px;
 }
 
 text {
-  fill: var(--color-sand);
+  fill: var(--color-white);
   font-size: 15px;
   visibility: hidden;
 }
 
 .theLine {
-  stroke: var(--color-sand);
+  stroke: var(--color-white);
 }
 
 
@@ -181,11 +197,11 @@ text {
 
 
 .timeline-text{
-  @apply font-heading text-sand invisible text-[7px] md:text-[10px] lg:text-xs w-[100px] md:w-[200px] lg:w-[280px]
+  @apply font-heading text-white invisible text-[7px] md:text-[10px] lg:text-xs w-[100px] md:w-[200px] lg:w-[280px]
 }
 
 .timeline-pic{
-  @apply rounded-lg overflow-hidden border-2 md:border-5 border-customBlack  scale-60 lg:scale-100
+  @apply rounded-lg overflow-hidden border-2 md:border-5 border-black  scale-60 lg:scale-100
 }
 
 .logo-scroll-container {
@@ -254,10 +270,10 @@ text {
 }
 
 .send-button{
-  @apply bg-white justify-center items-center rounded-full self-center flex py-1 w-[140px] gap-1 cursor-pointer
+  @apply bg-white justify-center items-center rounded-full self-center flex py-1 w-[140px] gap-1 cursor-pointer text-black
 }
 .gh-button{
-  @apply bg-white justify-center items-center rounded-full self-center flex py-1 w-[120px] gap-1 cursor-pointer
+  @apply bg-white justify-center items-center rounded-full self-center flex py-1 w-[120px] gap-1 cursor-pointer text-black
 }
 
 .cta-ui{
@@ -292,11 +308,11 @@ text {
 }
 
 .back-button{
-  @apply   rounded-full text-customBlue w-[80px] py-2 font-heading font-bold cursor-pointer  text-center
+  @apply   rounded-full text-black w-[80px] py-2 font-heading font-bold cursor-pointer  text-center bg-white
 }
 
 .form-send-button{ 
-  @apply bg-white rounded-full text-customBlue w-[80px] py-2 font-heading font-bold cursor-pointer  text-center 
+  @apply bg-white rounded-full text-black w-[80px] py-2 font-heading font-bold cursor-pointer  text-center 
 }
 
 .form-label{

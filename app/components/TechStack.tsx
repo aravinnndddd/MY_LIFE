@@ -1,28 +1,28 @@
-import React, { useEffect, useRef, useState } from 'react';
-import Matter from 'matter-js';
 import { gsap } from 'gsap';
-import Image from 'next/image';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import { Send } from 'lucide-react';
-import ConfettiBurst from './Confetti';
+import Matter from 'matter-js';
+import Image from 'next/image';
+import React, { useEffect, useRef, useState } from 'react';
 import { contactSchema } from '../lib/zod';
+import ConfettiBurst from './Confetti';
 
 
 gsap.registerPlugin(ScrollTrigger);
 
 const techStack = [
   { name: 'React', color: '#61DBFB' },
-  { name: 'Node.js', color: '#8CC84B' },
+  { name: 'Node.js', color: '#00ff41' },
   { name: 'TypeScript', color: '#3178C6' },
-  { name: 'GSAP', color: '#88CE02' },
+  { name: 'GSAP', color: '#00ff41' },
   { name: 'React Native', color: '#E44D26' },
   { name: 'Python', color: '#264DE4' },
   { name: 'AWS', color: '#FF9900' },
   { name: 'PostgreSQL', color: '#336791' },
-  { name: 'Redis' },
-  { name: 'Prisma ORM' },
-  { name: 'Next.js' },
-  { name: 'Tailwind' },
+  { name: 'Redis', color: '#00ff41' },
+  { name: 'Prisma ORM', color: '#00ff41' },
+  { name: 'Next.js', color: '#000000' },
+  { name: 'Tailwind', color: '#00ff41' },
 ];
 
 const TechStack = () => {
@@ -423,7 +423,7 @@ const TechStack = () => {
         style={{
           width: '100vw',
           justifyContent:'center',
-          backgroundColor:'#2e54d1',
+          backgroundColor:'#000000',
           alignItems:'center',
           height: '100vh',
           position: 'relative',

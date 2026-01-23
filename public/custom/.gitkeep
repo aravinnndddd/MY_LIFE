@@ -1,0 +1,23 @@
+# Custom Assets Directory
+
+This directory is for your custom portfolio assets:
+
+## Structure:
+- `images/` - Hero backgrounds, profile photos, etc.
+- `projects/` - Project screenshots and images
+- `timeline/` - Company logos, university images, etc.
+- `testimonials/` - Client/colleague profile photos
+- `logos/` - Your personal logo and tech stack logos
+- `documents/` - Resume, CV, and other downloadable files
+
+## Image Guidelines:
+- Use optimized formats (WebP, AVIF when possible)
+- Recommended sizes:
+  - Hero background: 1920x1080 or larger
+  - Profile photo: 400x400
+  - Project screenshots: 1200x800
+  - Logos: SVG preferred, or PNG with transparent background
+
+## File Naming:
+- Use descriptive, lowercase names with hyphens
+- Examples: `hero-background.jpg`, `project-1-screenshot.png`, `company-logo.svg`
