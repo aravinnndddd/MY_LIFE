@@ -785,7 +785,7 @@ const BingeableShowcase = () => {
                     className="ml-10 rounded-2xl    "
                   />
                   <h3 className=" font-extrabold text-3xl  lg:text-4xl xl:text-5xl text-sand font-bingeable ">
-                    SYAMKUMARSS
+                    Skillhac
                   </h3>
                 </div>
                 <h3 className="text-lg lg:text-xl  xl:text-2xl  font-bold text-sand font-bingeable ">
@@ -1142,7 +1142,7 @@ const BingeableShowcase = () => {
         </div>
         <div className="challenges-2 w-dvw px-8 h-full ">
           <h2 className="challenges-title text-customBlue font-bold font-heading tracking-[0.3em] uppercase pt-10 w-full hidden lg:flex ">
-            mission impossible 02
+            Mission Impossible 02
           </h2>
           <div className="challenges-2 relative justify-center items-center  lg:pt-20">
             <h3
